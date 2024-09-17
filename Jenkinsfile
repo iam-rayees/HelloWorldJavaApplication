@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'alpine/git'
-                    label 'docker-agent'
+                    // No need for label
                 }
             }
             steps {
@@ -17,7 +17,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.8.6-openjdk-11'
-                    label 'docker-agent'
+                    // No need for label
                 }
             }
             steps {
@@ -29,7 +29,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.8.6-openjdk-11'
-                    label 'docker-agent'
+                    // No need for label
                 }
             }
             steps {
@@ -41,8 +41,8 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.8.6-openjdk-11'
-                    label 'docker-agent'
-                    args '-p 8080:8080'
+                    args '-p 8080:8080' // Expose port
+                    // No need for label
                 }
             }
             steps {
@@ -56,4 +56,5 @@ pipeline {
         }
     }
 }
+
 
