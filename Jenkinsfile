@@ -1,19 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Checkout') {
-            agent {
-                docker {
-                    image 'alpine/git'
-                    // No need for label
-                }
-            }
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Maven Clean') {
+         stage('Maven Clean') {
             agent {
                 docker {
                     image 'maven:3.8.6-openjdk-11'
